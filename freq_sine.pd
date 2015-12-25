@@ -1,0 +1,18 @@
+#N canvas 915 266 728 484 10;
+#X msg 124 159 0;
+#X msg 198 158 1;
+#X floatatom 101 17 5 0 0 0 - - -, f 5;
+#X obj 101 85 osc~ 440;
+#X obj 100 214 *~ 0;
+#X obj 97 256 dac~;
+#X text 230 163 ON;
+#X text 155 161 OFF;
+#X text 161 87 sine wave generator;
+#X text 150 14 frequency input;
+#X text 141 222 audio output;
+#X connect 0 0 4 1;
+#X connect 1 0 4 1;
+#X connect 2 0 3 0;
+#X connect 3 0 4 0;
+#X connect 4 0 5 1;
+#X connect 4 0 5 0;
