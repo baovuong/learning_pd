@@ -1,0 +1,34 @@
+#N canvas 1129 404 519 668 10;
+#X obj 52 250 mtof;
+#X obj 52 272 phasor~;
+#X obj 52 294 expr~ $v1 > $v2;
+#X obj 144 235 nbx 5 14 0 100 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 87 256;
+#X obj 138 271 / 100;
+#X obj 53 418 dac~;
+#X obj 132 407 tabwrite~ pwm;
+#X obj 183 323 metro 100;
+#X obj 216 297 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array pwm 100 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 270 340 graph;
+#X obj 50 13 notein;
+#X obj 66 70 stripnote;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 5 0;
+#X connect 2 0 5 1;
+#X connect 2 0 6 0;
+#X connect 3 0 4 0;
+#X connect 4 0 2 1;
+#X connect 7 0 6 0;
+#X connect 8 0 7 0;
+#X connect 10 0 11 0;
+#X connect 10 1 11 1;
+#X connect 11 0 0 0;
