@@ -1,4 +1,4 @@
-#N canvas 532 113 495 522 10;
+#N canvas 529 127 495 522 10;
 #X obj 49 80 mtof;
 #X obj 49 111 phasor~;
 #X obj 44 459 dac~;
@@ -6,36 +6,38 @@
 #X obj 179 382 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #N canvas 0 50 450 250 (subpatch) 0;
-#X array square 100 float 1;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0;
+#X array pulse 100 float 1;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0.740157 0.740157 0.740157 0.740157 0.740157
+0.740157 0.740157 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0.740157 0.740157 0.740157 0.740157 0.740157 0.740157 0.740157
+0.740157 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.740157
+0.740157 0.740157 0.740157 0.740157 0.740157 0.740157 0.740157 0 0
+0 0 0 0 0 0 0 0 0 0;
 #X coords 0 1 100 -1 200 140 1 0 0;
 #X restore 247 213 graph;
 #X obj 72 173 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 10600 1;
+-1 -1 9400 1;
 #X floatatom 72 338 5 0 0 0 - - -, f 5;
 #X obj 49 375 *~;
 #X obj 52 50 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 4900 1;
-#X obj 125 445 tabwrite~ square;
+-1 -1 8900 1;
 #X obj 72 315 expr $f1 / 127;
 #X obj 49 133 expr~ $v1 < $f2;
-#X obj 153 77 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2900 1;
-#X obj 150 97 expr $f1/127;
+#X obj 138 87 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2800 1;
+#X obj 135 107 expr $f1/127;
+#X obj 125 445 tabwrite~ pulse;
 #X connect 0 0 1 0;
-#X connect 1 0 12 0;
-#X connect 3 0 10 0;
+#X connect 1 0 11 0;
+#X connect 3 0 14 0;
 #X connect 4 0 3 0;
-#X connect 6 0 11 0;
+#X connect 6 0 10 0;
 #X connect 7 0 8 1;
 #X connect 8 0 2 0;
 #X connect 8 0 2 1;
-#X connect 8 0 10 0;
+#X connect 8 0 14 0;
 #X connect 9 0 0 0;
-#X connect 11 0 7 0;
-#X connect 12 0 8 0;
-#X connect 13 0 14 0;
-#X connect 14 0 12 1;
+#X connect 10 0 7 0;
+#X connect 11 0 8 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 1;
