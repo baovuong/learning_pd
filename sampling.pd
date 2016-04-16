@@ -1,0 +1,39 @@
+#N canvas 1021 163 714 422 10;
+#N canvas 0 50 752 351 (subpatch) 0;
+#X array array1 111744 float 4;
+#X coords 0 1 111743 -1 200 140 1 0 0;
+#X restore 395 55 graph;
+#X obj 264 62 soundfiler;
+#X floatatom 265 98 5 0 0 0 - - -, f 5;
+#X msg 264 19 read -resize damn_son.wav array1;
+#X obj 154 233 tabread4~ array1;
+#X obj 158 272 *~ 0.7;
+#X obj 157 312 dac~;
+#X obj 151 184 *~ $v1;
+#X obj 153 204 +~ 1;
+#X obj 236 171 nbx 5 14 0 127 0 0 empty empty empty 0 -8 0 10 -262144
+-1 -1 0.364168 256;
+#X obj 132 140 abs~;
+#X obj 65 86 expr~ 2*(($v1 > 0.5) - $v1);
+#X obj 395 198 hsl 200 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 213 1;
+#X obj 322 268 snapshot~;
+#X obj 314 162 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 111 52 phasor~ 0.25;
+#X obj 311 203 metro 50;
+#X connect 1 0 2 0;
+#X connect 2 0 7 1;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 5 0 6 0;
+#X connect 5 0 6 1;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X connect 10 0 7 0;
+#X connect 10 0 13 0;
+#X connect 11 0 10 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 11 0;
+#X connect 16 0 13 0;
